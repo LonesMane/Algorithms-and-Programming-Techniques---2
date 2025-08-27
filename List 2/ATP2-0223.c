@@ -14,12 +14,13 @@ int main ()
         diagonal_second = 1,
         determinante = 0;
     int i,
-        j;
+        j,
+        k;
 
     //Guardar numeros aleatorios em cada espa�o da matriz usando for que altera a coluna e a linha//
     for(i = 0;i < LINHAS;i++)
         for(j = 0;j < COLUNAS;j++)
-                matriz[i][j] = rand() % 101;
+                matriz[i][j] = rand() % 10;
 
     //imprimindo cada elemento da matriz//
     printf("A matriz eh:\n");
@@ -54,12 +55,25 @@ int main ()
 
     //Multiplicando os valores para obter as diagonais//
         //Diagonal Principal//
-        for(j = 0;i < 3;j++)
+        for(k = 0;k < 3;k++)
         {
+            diagonal_main = 1;
             for(i = 0;i < LINHAS;i++)
-                diagonal_main *= matriz_sarrus[i+j][i+j];
+                diagonal_main *= matriz_sarrus[i][i+k];
             determinante += diagonal_main;
         }    
-            
+        
+        //Diagonal Secundária//
+        for(k = 0;k < 3;k++)
+        {
+            diagonal_second = 1;
+            for(i = 0;i < LINHAS;i++)
+                diagonal_second *= matriz_sarrus[i][4 - i - k];
+            determinante -= diagonal_second;
+        }
+    
+    //Imprimindo o determinante da Matriz//
+    printf("\n\nO Determinante da matriz eh: %d", determinante);
+
     return 0;
 }

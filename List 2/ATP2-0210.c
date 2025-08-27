@@ -13,12 +13,12 @@ int main ()
         i,
         j;
 
-    //Guardar numeros aleatorios em cada espaço da matriz usando for que altera a coluna e a linha//
+    //Guardar numeros aleatorios em cada espaï¿½o da matriz usando for que altera a coluna e a linha//
     for(i = 0;i < LINHAS;i++)
     {
         for(j = 0;j < COLUNAS;j++)
             {
-                matriz[i][j] = 1 + rand() % 10;
+                matriz[i][j] = 1 + rand() % 100;
             }
     }
 

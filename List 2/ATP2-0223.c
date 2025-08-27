@@ -74,6 +74,6 @@ int main ()
     
     //Imprimindo o determinante da Matriz//
     printf("\n\nO Determinante da matriz eh: %d", determinante);
-
+        
     return 0;
 }

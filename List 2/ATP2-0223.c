@@ -14,7 +14,8 @@ int main ()
         diagonal_second = 1,
         determinante = 0;
     int i,
-        j;
+        j,
+        k;
 
     //Guardar numeros aleatorios em cada espa�o da matriz usando for que altera a coluna e a linha//
     for(i = 0;i < LINHAS;i++)
@@ -54,18 +55,20 @@ int main ()
 
     //Multiplicando os valores para obter as diagonais//
         //Diagonal Principal//
-        for(j = 0;i < 3;j++)
+        for(k = 0;k < 3;k++)
         {
+            diagonal_main = 1;
             for(i = 0;i < LINHAS;i++)
-                diagonal_main *= matriz_sarrus[i][i+j];
+                diagonal_main *= matriz_sarrus[i][i+k];
             determinante += diagonal_main;
         }    
         
         //Diagonal Secundária//
-        for(j = 4;i >= 0;j--)
+        for(k = 0;k < 3;k++)
         {
+            diagonal_second = 1;
             for(i = 0;i < LINHAS;i++)
-                diagonal_second *= matriz_sarrus[i][j];
+                diagonal_second *= matriz_sarrus[i][4 - i - k];
             determinante -= diagonal_second;
         }
     

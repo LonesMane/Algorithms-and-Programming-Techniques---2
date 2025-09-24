@@ -12,8 +12,10 @@ int main()
 
     printf("Digite o titulo do livro: ");
     fgets(livro1.titulo, 50, stdin);
+
     printf("\n\nDigite o autor do livro: ");
     fgets(livro1.autor, 50, stdin);
+
     printf("\n\nDigite o ano do livro: ");
     scanf("%d", &livro1.ano);
 

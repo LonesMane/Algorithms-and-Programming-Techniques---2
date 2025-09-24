@@ -34,5 +34,6 @@ int main()
     printf("\nAlunos ordenados por idade:\n");
     for(i = 0;i < QTD_ALUNOS;i++)
         printf("Nome: %sIdade: %d\n\n", turma[i].nome, turma[i].idade);
+        
     return 0;
 }

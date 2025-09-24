@@ -1,5 +1,6 @@
 //Representar um triângulo que contém os pontos correspondentes aos três vértices//
 #include <stdio.h>
+#include <math.h>
 
 struct ponto
 {
@@ -45,11 +46,7 @@ int main()
     printf("Lado CA: ");
     scanf("%f", &lados.ladoCA);
 
-    printf("\nLados do triangulo:\n");
-    printf("Lado AB: %.2f\n", lados.ladoAB);
-    printf("Lado BC: %.2f\n", lados.ladoBC);
-    printf("Lado CA: %.2f\n", lados.ladoCA);
-    
+   
 
     return 0;
 }

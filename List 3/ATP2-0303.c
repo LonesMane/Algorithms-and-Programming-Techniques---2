@@ -1,40 +1,26 @@
 #include <stdio.h>
 
-struct ficha_aluno
+//Definindo uma estrutura para coordenadas de pontos//
+struct pontos_figura
 {
-    char nome[50];
-    int idade;
-    float nota;
+    int x;
+    int y;
 };
-
-#define QTD_ALUNOS 3
 
 int main()
 {
-    struct ficha_aluno alunos[QTD_ALUNOS];
-    struct ficha_aluno alunas[QTD_ALUNOS];
-    int i;
+    struct pontos_figura ponto1, ponto2;
 
-    for(i = 0;i < QTD_ALUNOS;i++)
-    {
-        printf("Insira o nome do aluno %d: ", i+1);
-        fgets(alunos[i].nome, 50, stdin);
+    //Coletando as coordenadas do ponto 1//
+    printf("Digite as coordenadas do ponto 1 (x y): ");
+    scanf("%d %d", &ponto1.x, &ponto1.y);
 
-        printf("Insira a idade do aluno %d: ", i+1);
-        scanf("%d", &alunos[i].idade);
-        getchar();
-        
-        printf("Insira a nota do aluno %d: ", i+1);
-        scanf("%f", &alunos[i].nota);
-        getchar();
-    }
+    //Copiando o conteúdo de ponto1 para ponto2//
+    ponto2 = ponto1;
 
-    for(i = 0;i < QTD_ALUNOS;i++)
-        alunas[i] = alunos[i];
-
-    printf("\nFicha dos alunos:\n");
-    for(i = 0;i < QTD_ALUNOS;i++)
-        printf("Aluno %d\nNome: %sIdade: %d\nNota: %.2f\n\n", i+1, alunas[i].nome, alunas[i].idade, alunas[i].nota);
+    //Imprimindo ambas estruturas//
+    printf("Ponto 1: (%d, %d)\n", ponto1.x, ponto1.y);
+    printf("Ponto 2: (%d, %d)\n", ponto2.x, ponto2.y);
 
     return 0;
 }

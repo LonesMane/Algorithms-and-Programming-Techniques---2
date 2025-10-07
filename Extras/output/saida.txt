@@ -1,0 +1,5 @@
+Numero de 0: 1
+Numero de 3: 3
+Numero de 5: 2
+Numero de 7: 1
+Numero de 9: 3

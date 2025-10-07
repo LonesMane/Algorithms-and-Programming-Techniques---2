@@ -22,7 +22,8 @@ int main()
     fscanf(arquivo, "%d", &n);
 
     //Alocando memória para o vetor de números//
-    contagem = (int *)malloc(n * sizeof(int) * (MAX + 1));
+    contagem = (int *)malloc((MAX + 1) * sizeof(int));
+
 
     //Caso a alocação falhe//
     if (contagem == NULL)
@@ -45,7 +46,7 @@ int main()
     }
 
     //Produzindo um arquivo de saída//
-    saida = fopen("saida.txt", "W");
+    saida = fopen("saida.txt", "w");
 
     //Caso o arquivo não seja criado//
     if(saida == NULL)
@@ -67,3 +68,4 @@ int main()
 
     return 0;
 }
+

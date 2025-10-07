@@ -17,8 +17,10 @@ int main()
     pessoa1.idade = 19;
     pessoa1.altura = 1.85;
 
+    //Calculando o tamanho da struct com 'sizeof'//
     int tamanho = sizeof(pessoa1);
 
+    //Imprimindo o tamanho//
     printf("Tamanho da estrutura pessoa: %d bytes\n", tamanho);
 
     return 0;

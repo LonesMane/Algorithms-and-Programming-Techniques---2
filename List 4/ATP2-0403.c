@@ -11,7 +11,7 @@ int main()
     printf("Digite o nome do arquivo a ser aberto (com extensao): ");
     scanf("%s", nome_arquivo);
 
-    contagem_linhas = fopen("../nome_arquivo", "r");
+    contagem_linhas = fopen(nome_arquivo, "r");
     
     //Caso o arquivo não seja aberto//
     if (contagem_linhas == NULL)
@@ -28,7 +28,7 @@ int main()
     {
         //Caso encontre o final da linha (\n) aumenta a contagem em 1//
         if (caractere == '\n')
-            contagem_linhas++;
+            n_linhas++;
     }
 
     printf("O arquivo %s possui %d linhas.", nome_arquivo, n_linhas);

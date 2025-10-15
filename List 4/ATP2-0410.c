@@ -30,6 +30,7 @@ int erro_abrir_arquivo(FILE *arq)
 
 int main()
 {
+    Pessoa cont;
     //Coletando nome do arquivo//
     char nome_arquivo[30];
     coletar_nome_arquivo(nome_arquivo);
@@ -37,8 +38,17 @@ int main()
     //Abrindo arquivo e verificando erros//
     FILE *arq1, *arq2;
     arq1 = fopen (nome_arquivo, "rb");
-    if (erro_abrir_arquivo)
+    if (erro_abrir_arquivo(arq1))
+        return 1;
+    arq2 = fopen ("copia.bin", "wb");
+    if (erro_abrir_arquivo(arq2))
         return 1;
 
-    //lendo arquivo até o final//
+    //lendo arquivo e copiando até o final//
+    while (fread(&cont, sizeof(Pessoa), 1, arq1))
+        fwrite(&cont, sizeof(Pessoa), 1, arq2);
+    
+    fclose(arq1);
+    fclose(arq2);
+    return 0;
 }

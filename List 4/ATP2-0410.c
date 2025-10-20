@@ -35,8 +35,29 @@ int main()
     char nome_arquivo[30];
     coletar_nome_arquivo(nome_arquivo);
 
-    //Abrindo arquivo e verificando erros//
     FILE *arq1, *arq2;
+
+    arq1 = fopen (nome_arquivo, "wb");
+    if (erro_abrir_arquivo(arq1))
+        return 1;
+    
+    //Escrevendo o arquivo//
+    Pessoa Milko, Milko2;
+    strcpy(Milko.nome, "Milko");
+    Milko.idade = 19;
+    Milko.altura = 1.83;
+
+    strcpy(Milko2.nome, "Milko2");
+    Milko2.idade = 20;
+    Milko2.altura = 2.83;
+
+     fwrite (&Milko, sizeof(Pessoa), 1, arq1);
+     fwrite (&Milko2, sizeof(Pessoa), 1, arq1);
+
+     fclose(arq1);
+
+
+    //Abrindo arquivo e verificando erros//
     arq1 = fopen (nome_arquivo, "rb");
     if (erro_abrir_arquivo(arq1))
         return 1;

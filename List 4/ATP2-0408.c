@@ -58,7 +58,7 @@ int main()
     struct Pessoa individuo;
     fread(&individuo, sizeof(struct Pessoa), 1, arq);
     printf("Nome: %s\nIdade: %d\nAltura: %.2f\n", individuo.nome, individuo.idade, individuo.altura);
-    
 
+    fclose(arq);
     return 0;
 }

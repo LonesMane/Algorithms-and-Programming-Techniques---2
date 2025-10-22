@@ -18,14 +18,21 @@ int main()
     }
 
     //lendo arquivo e registrando os numeros enquanto classifico como maior ou menor//
-    int numero, maior, menor;
+    int numero, maior, menor, primeiro = 1;
     while (fscanf(arq, "%d", &numero) != EOF)
     {
-        if (int primeiro)
+        if (primeiro)
+        {
             maior = menor = numero;
+            primeiro = 0;
+        }
+        if (numero > maior)
+            maior = numero;
+        else if (numero < menor)
+            menor = numero;
     }
 
-    printf("O maior eh: %d", maior);
+    printf("O maior eh: %d\n", maior);
     printf("O menor eh: %d", menor);
 
     fclose(arq);

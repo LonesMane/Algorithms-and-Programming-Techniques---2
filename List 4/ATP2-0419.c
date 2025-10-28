@@ -16,6 +16,7 @@ int main()
         return 1;
     }
 
+    //Imprime se está ou não vazio lendo o primeiro caractere//
     int atual;
     if (fscanf(arq, "%d", &atual) == EOF)
         printf("Arquivo Vazio!");

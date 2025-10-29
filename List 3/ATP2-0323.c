@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-typedef enum mes
+enum mes
 {
     JANEIRO = 1,
     FEVEREIRO,
@@ -13,5 +13,16 @@ typedef enum mes
     SETEMBRO,
     OUTUBRO,
     NOVEMBRO,
-    DEZEMBRO;
+    DEZEMBRO
+};
+
+int main()
+{
+    enum mes mes;
+
+    //imprimindo os valores//
+    for (mes = JANEIRO;mes <= DEZEMBRO;mes++)
+        printf("%2d\n", mes);
+
+    return 0;
 }

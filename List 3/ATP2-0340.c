@@ -10,7 +10,7 @@ int main()
 {
     Ponto p1;
 
-    //Coletando Informações//
+    //Coletando Informações usando operador '.'//
     printf("\n=== Informacoes do Ponto ===\n");
     printf("Coordenada X: ");
     scanf("%d", &p1.x);
@@ -19,7 +19,7 @@ int main()
     printf("Coordenada Z: ");
     scanf("%d", &p1.z);
 
-    //Imprimindo Valores//
+    //Imprimindo Valores usando operador '.'//
     printf("\n=== Ponto 1 ===\n");
     printf("X: %d\n", p1.x);
     printf("Y: %d\n", p1.y);
